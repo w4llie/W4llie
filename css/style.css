@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0F1115;
+    color: #F5F7FA;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    color: #9CA3AF;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+main {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.topo {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#adicionar {
+    background-color: #2563EB;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+#adicionar:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-2px);
+}
+
+#buscar {
+    flex: 1;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #2B2F36;
+    background-color: #181B20;
+    color: white;
+    outline: none;
+    font-size: 1rem;
+}
+
+#buscar:focus {
+    border-color: #2563EB;
+}
+
+#formulario {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #181B20;
+    border: 1px solid #2B2F36;
+    padding: 24px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+}
+
+#formulario > label {
+    color: #D1D5DB;
+    font-weight: 500;
+}
+
+#formulario input:not([type="radio"]),
+#formulario select {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #2B2F36;
+    background-color: #111318;
+    color: white;
+    outline: none;
+    font-size: 1rem;
+}
+
+#formulario input:not([type="radio"]):focus,
+#formulario select:focus {
+    border-color: #2563EB;
+}
+
+.avaliacao {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.avaliacao input {
+    display: none;
+}
+
+.avaliacao label {
+    font-size: 2rem;
+    color: #4B5563;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-right: 5px;
+}
+
+.avaliacao label:hover,
+.avaliacao label:hover ~ label {
+    color: #FACC15;
+}
+
+.avaliacao input:checked ~ label {
+    color: #FACC15;
+}
+
+.acoes-formulario {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.acoes-formulario button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.acoes-formulario button[type="submit"] {
+    background-color: #2563EB;
+    color: white;
+}
+
+.acoes-formulario button[type="submit"]:hover {
+    background-color: #1D4ED8;
+}
+
+#cancelarEdicao {
+    background-color: #2B2F36;
+    color: white;
+}
+
+#cancelarEdicao:hover {
+    background-color: #3B4048;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 380px);
+    justify-content: center;
+    gap: 35px;
+}
+
+.card {
+    width: 380px;
+    background-color: #181B20;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #2B2F36;
+    transition: 0.25s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #2563EB;
+}
+
+.card img {
+    width: 380px;
+    height: 570px;
+    object-fit: cover;
+    background-color: #111318;
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+.card-conteudo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    min-height: 52px;
+}
+
+.estrelas {
+    color: #FACC15;
+    margin-bottom: 12px;
+    min-height: 24px;
+}
+
+.tipo {
+    color: #9CA3AF;
+    margin-bottom: 12px;
+    min-height: 24px;
+}
+
+.status {
+    background-color: #2563EB20;
+    color: #60A5FA;
+    padding: 8px 12px;
+    border-radius: 999px;
+    width: fit-content;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    min-height: 34px;
+}
+
+.card-botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.card-botoes button {
+    flex: 1;
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.editar {
+    background-color: #2563EB;
+    color: white;
+}
+
+.editar:hover {
+    background-color: #1D4ED8;
+}
+
+.excluir {
+    background-color: #DC2626;
+    color: white;
+}
+
+.excluir:hover {
+    background-color: #B91C1C;
+}
+
+@media (max-width: 768px) {
+
+    .topo {
+        flex-direction: column;
+    }
+
+    #cards {
+        grid-template-columns: repeat(auto-fill, 220px);
+        gap: 22px;
+    }
+
+    .card {
+        width: 220px;
+    }
+
+    .card img {
+        width: 220px;
+        height: 330px;
+    }
+
+    .card-conteudo {
+        min-height: 230px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    #cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card img {
+        width: 100%;
+        height: 420px;
+    }
+
+    .acoes-formulario {
+        flex-direction: column;
+    }
+
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 900px;
+    height: 900px;
+
+    background: radial-gradient(
+        circle,
+        rgba(37, 99, 235, 0.30) 0%,
+        transparent 70%
+    );
+
+    filter: blur(80px);
+
+    z-index: -1;
+
+    animation: moverGradiente1 10s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    width: 900px;
+    height: 900px;
+
+    background: radial-gradient(
+        circle,
+        rgba(168, 85, 247, 0.22) 0%,
+        transparent 70%
+    );
+
+    filter: blur(90px);
+
+    z-index: -1;
+
+    animation: moverGradiente2 14s ease-in-out infinite alternate;
+}
+
+@keyframes moverGradiente1 {
+
+    from {
+        transform: translate(-100px, -50px);
+    }
+
+    to {
+        transform: translate(100px, 50px);
+    }
+
+}
+
+@keyframes moverGradiente2 {
+
+    from {
+        transform: translate(80px, 50px);
+    }
+
+    to {
+        transform: translate(-80px, -50px);
+    }
+
+}

@@ -143,3 +143,11 @@ buscar.addEventListener("input", () => {
     });
     mostrarCards(filmesFiltrados);
 });
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/serviceworker.js").then(() => {
+            console.log("Service Worker registrado");
+        }).catch((erro) => {
+            console.log("Erro:", erro);
+        });
+}
